@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <div class="menu-left">Team</div>
+        <div class="menu-right">
+          <a href="">Products</a>
+          <a href="">Services</a>
+          <a href="">Contact</a>
+          <a href="">Log in</a>
+          <a class="btn" href="">Get Access</a>
+        </div>
+      </div>
+      <div class="content">
+        <div class="detail-heading">
+          <h1 id="title"></h1>
+        </div>
+        <div class="detail-author">
+          <img
+            src="./image/anh-dep-hinh-nen-thien-nhien-20.jpg"
+            alt=""
+            class="detail-author-img"
+          />
+          <p class="detail-author-des">Shedrack eze</p>
+          <p class="line"></p>
+          <p class="detail-author-des">2nd January,2022</p>
+        </div>
+        <div class="detail-img">
+          <img id="img" src="" alt="" />
+        </div>
+        <div class="detail-des1">
+          <p class="detail-des" id="des"></p>
+          <p class="detail-des">
+            Each example listed in this blog post are all different in some way
+            and all bring something unique to their readers & subscribers. I
+            want to show you what is possible and how you can take inspiration
+            from them and create an awesome blog of your own.
+          </p>
+          <p class="detail-des">
+            Some of these blogs make over $100k a month, others are just a hobby
+            for their owners, but all have the same purpose at their core… the
+            love of writing and sharing information. Some of these blogs make
+            over $100k a month, others are just a hobby for their owners, but
+            all have the same purpose at their core… the love of writing and
+          </p>
+          <p class="detail-des">
+            Some of these blogs make over $100k a month, others are just a hobby
+            for their owners, but all have the same purpose at their core… the
+            love of writing and sharing information. Some of these blogs make
+            over $100k a month, others are just a hobby for their owners, but
+            all have the same purpose at their core… the love of writing and
+            sharing information.
+          </p>
+        </div>
+        <div class="detail-written">
+          <img src="./image/anh-dep-hinh-nen-thien-nhien-20.jpg" alt="" />
+          <div class="detail-written-right">
+            <p class="detail-written-right-lab">Written by</p>
+            <h2 class="detail-written-right-name">Shedrack Eze</h2>
+            <p class="detail-written-right-ceo">CEO Team App</p>
+          </div>
+        </div>
+        <div class="detail-line"></div>
+        <div class="detail-join">
+          <h3>Join the conversation</h3>
+        </div>
+        <div class="detail-comments">
+          <img src="./image/anh-dep-hinh-nen-thien-nhien-20.jpg" alt="" />
+          <input
+            placeholder="Comments"
+            type="Comments"
+            class="detail-input-comments"
+          />
+        </div>
+      </div>
+      <div class="footer">
+        <div class="team">
+          <h4 class="footer-title">Team</h4>
+          <a href="">instagram</a>
+          <a href="">Facebook</a>
+          <a href="">Twitter</a>
+          <a href="">instagram</a>
+          <a href="">Facebook</a>
+          <a href="">Twitter</a>
+        </div>
+        <div class="Cases">
+          <a class="footer-title" href="">Use Cases</a>
+          <a href="">UI Design</a>
+          <a href="">UX Design</a>
+          <a href="">Prototyping</a>
+          <a href="">UI Design</a>
+          <a href="">UX Design</a>
+          <a href="">Prototyping</a>
+        </div>
+        <div class="Explore">
+           <a class="footer-title" href="">Explore</a>
+          <a href="">Figma</a>
+          <a href="">Customers</a>
+          <a href="">Why I Love Figma</a>
+          <a href="">Figma</a>
+          <a href="">Customers</a>
+          <a href="">Why I Love Figma</a>
+        </div>
+        <div class="Resources">
+          <a class="footer-title" href="">Resources</a>
+          <a href="">Community Resources Hub</a>
+          <a href="">Support</a>
+          <a href="">Education</a>
+          <a href="">Community Resources Hub</a>
+          <a href="">Support</a>
+          <a href="">Education</a>
+        </div>
+        <div class="Subscribe">
+          <h5 class="footer-title">Subscribe to our newsletter</h5>
+          <input placeholder="Email" type="Email" class="footer-email" />
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      import { doc, getDoc, updateDoc, db } from "./firebaseConfig.js";
+
+      // Lấy URL hiện tại
+      const currentUrl = window.location.href;
+      console.log("🚀 ~ currentUrl:", currentUrl);
+
+      // Tạo một đối tượng URL để phân tích URL
+      const url = new URL(currentUrl);
+
+      // Lấy giá trị của tham số 'id'
+      const id = url.searchParams.get("id");
+
+      const docRef = doc(db, "products", id);
+      const docSnap = await getDoc(docRef);
+
+      
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        console.log("🚀 ~ data:", data)
+        if (data) {
+          const titleElement  = document.getElementById("title");
+          console.log("🚀 ~ titleElement:", titleElement)
+          const img = document.getElementById("img");
+          console.log("🚀 ~ img:", img)
+          const des = document.getElementById("des");
+          console.log("🚀 ~ des:", des)
+          titleElement.textContent = data.name;
+          img.src = data.image;
+          des.textContent = data.des;
+        }
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  font-family: "Inter", sans-serif;
+}
+
+.banner {
+  display: flex;
+  gap: 32px;
+
+
+
+}
+
+.banner-left {
+  padding: 64px;
+
+}
+
+.Revo {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-left: 40px;
+
+}
+
+.sign-in {}
+
+.sign-in h2 {
+  font-size: 45px;
+  font-weight: 700;
+  margin-left: 96px;
+  color: #232323;
+  margin-bottom: 12px;
+}
+
+.sign-in p {
+  margin-top: 12px;
+  font-size: 16px;
+  margin-left: 96px;
+  font-weight: 400;
+  color: #969696;
+  margin-bottom: 32px;
+
+}
+
+.Revo-email input {
+  margin-left: 96px;
+  width: 400px;
+  height: 60px;
+  padding: 16px;
+  border: #D9D9D9 solid 1.5px;
+  border-radius: 7px;
+  margin-bottom: 20px;
+
+}
+
+.Revo-email input:focus {
+  border: #367AFF solid 1.5px;
+
+}
+
+.Revo-password input {
+  margin-left: 96px;
+  width: 400px;
+  height: 60px;
+  border: #D9D9D9 solid 1.5px;
+  border-radius: 7px;
+  padding: 16px;
+}
+
+.Revo-password input:focus {
+  border: #367AFF solid 1.5px;
+}
+
+.keep-me {
+  font-size: 14px;
+  color: #232323;
+  margin-left: 96px;
+  margin-top: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+
+}
+
+.keep-me>label {
+  font-size: 14px;
+  color: #3c3c3d;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.Revo-signin button {
+  margin-left: 96px;
+  width: 400px;
+  height: 55px;
+  background-color: #367AFF;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+}
+
+.Revo1 {
+  margin-left: 96px;
+  border-top: 2px solid #D9D9D9;
+  height: 25px;
+  display: block;
+  width: 400px;
+  margin-bottom: 20px;
+
+}
+
+.google a {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 55px;
+  border-radius: 8px;
+  background-color: #E6E8E7;
+  margin-left: 96px;
+  text-decoration: none;
+
+}
+
+.Need {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 96px;
+  width: 400px;
+  height: 27px;
+  font-size: 18px;
+  gap: 5px;
+
+}
+
+.Need1 {
+  color: #6C6C6C;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.Need2 {
+  color: #367AFF;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.banner-right {
+  flex: 1;
+  width: 100%;
+}
+
+.banner-right img {
+  width: 100%;
+  height: 100vh;
+
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}

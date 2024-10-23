@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="banner">
+      <div class="banner-left">
+        
+        <div class="sign-in">
+          <h2>Sign in</h2>
+          <p>Please login to continue to your account.</p>
+        </div>
+        <form id="login-form" >
+        <div class="Revo-email">
+          <input id="login-email" placeholder="Email" type="Email" />
+        </div>
+        <div class="Revo-password">
+          <input id="login-password" placeholder="Password" type="Password" />
+        </div>
+        <div class="keep-me">
+          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+          <label for="vehicle1"> Keep me logged in</label><br>
+        </div>
+        <div class="Revo-signin">
+          <button >Sign in</button>
+        </div>
+      </form>
+        <div class="Revo1">
+
+        </div>
+        <div class="google">
+          <a href="">Sign in with Google</a>
+          
+        </div>
+        <div class="Need">
+          <p class="Need1">Need an account?</p>
+          <a  class="Need2" href="./sign-up.html">Create one</a>
+        </div>
+      </div> 
+      <div class="banner-right">
+        <img src="../image/anh-dep-hinh-nen-thien-nhien-20.jpg" alt="">
+      </div>
+    </div>
+    <script type="module">
+      import { auth, signInWithEmailAndPassword } from "../firebaseConfig.js";
+      const loginFrom = document.getElementById("login-form");
+      loginFrom.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const email = document.getElementById("login-email").value;
+
+        const password = document.getElementById("login-password").value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            alert("Đăng nhập thành công");
+            window.location.assign("../index.html");
+
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert("Vui lòng xem lại email và password");
+          });
+      });
+    </script>
+  </body>
+</html>
